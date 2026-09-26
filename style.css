@@ -1,0 +1,318 @@
+/* --- CSS RESET & THE WITCHER PALETTE --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Slate & Kaer Morhen Stone */
+  --bg-primary: #0d0e11;
+  --bg-secondary: #17191e;
+  --bg-accent: #22262d;
+  --border-color: #343a44;
+
+  /* Parchment & Bestiary Typography */
+  --text-main: #e4decb;
+  --text-muted: #a8a394;
+  --text-silver: #c2cbd1;
+
+  /* Witcher Wolf & Gold Accents */
+  --accent-crimson: #a82323;
+  --accent-crimson-hover: #c42d2d;
+  --accent-gold: #c5a059;
+  --accent-gold-hover: #e0b86a;
+  --accent-gold-dim: #8e733e;
+
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Georgia, serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- HEADER & NAVIGATION (Mobile-First) --- */
+header {
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--accent-crimson);
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.site-logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-silver);
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(168, 35, 35, 0.4);
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  color: #ffffff;
+  background-color: var(--bg-accent);
+}
+
+.nav-list a.active {
+  border-bottom: 2px solid var(--accent-crimson);
+}
+
+/* --- MAIN CONTENT LAYOUT --- */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.hero {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 1.85rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+.hero .lead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.content-block {
+  margin-bottom: 2rem;
+}
+
+.content-block h2 {
+  font-size: 1.4rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.content-block p {
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+.reading-list,
+.feature-list {
+  padding-left: 1.25rem;
+  margin: 1rem 0;
+}
+
+.reading-list li,
+.feature-list li {
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.reading-list strong,
+.feature-list strong {
+  color: var(--text-silver);
+}
+
+/* Dialogue Quotes */
+blockquote {
+  border-left: 4px solid var(--accent-crimson);
+  padding: 0.85rem 1.2rem;
+  margin: 1.5rem 0;
+  background-color: var(--bg-secondary);
+  font-style: italic;
+  color: var(--text-silver);
+  box-shadow: inset 2px 0 8px rgba(0, 0, 0, 0.4);
+}
+
+/* --- MEDIA & POSTER ENHANCEMENTS --- */
+.media-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.responsive-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Books Collage */
+.books-grid-container {
+  margin: 2rem auto;
+  max-width: 720px;
+}
+
+.books-poster {
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.books-poster:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-crimson);
+  box-shadow: 0 14px 30px rgba(168, 35, 35, 0.3);
+}
+
+/* Portrait Posters (Games & TV) */
+.game-art-container {
+  margin: 2rem auto;
+}
+
+.game-cover {
+  max-width: 320px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.9);
+}
+
+.game-cover:hover {
+  transform: scale(1.02);
+  border-color: var(--accent-crimson);
+  box-shadow: 0 16px 36px rgba(168, 35, 35, 0.35);
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.85rem;
+}
+
+figcaption em {
+  color: var(--text-silver);
+  font-style: normal;
+}
+
+/* Callout Boxes (Expansions & Pre-Orders) */
+.pre-order-box,
+.expansion-box,
+.feature-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-gold);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.btn-container {
+  margin-top: 1.25rem;
+}
+
+/* --- CRISP, ACCESSIBLE BUTTONS (NO VIBRATION/BLUR) --- */
+.btn-cta {
+  display: inline-block;
+  background-color: var(--accent-gold);
+  color: #121316;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.75rem 1.4rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--accent-gold-hover);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-cta:hover {
+  background-color: var(--accent-gold-hover);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
+}
+
+/* Cards (Mobile: Stacked) */
+.content-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  color: var(--text-silver);
+  margin-bottom: 0.5rem;
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- DESKTOP MEDIA QUERY (Responsive Adjustment) --- */
+@media screen and (min-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero .lead {
+    font-size: 1.15rem;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
